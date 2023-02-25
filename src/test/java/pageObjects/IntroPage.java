@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static testClasses.BaseTest.logger;
+
 public class IntroPage {
     public AndroidDriver mobileDriver;
 
@@ -18,7 +20,7 @@ public class IntroPage {
 
     public HomePage clickIntroSkipButton() throws InterruptedException {
         introSkipBtn.click();
-        System.out.println("Skip Intro Button is clicked");
+        logger.info("[IntroPage] Skip Intro Button is clicked");
         Thread.sleep(2000);
         return new HomePage(mobileDriver);
     }

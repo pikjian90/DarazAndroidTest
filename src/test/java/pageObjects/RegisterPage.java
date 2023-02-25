@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
 
+import static testClasses.BaseTest.logger;
+
 public class RegisterPage {
     public AndroidDriver mobileDriver;
 
@@ -64,19 +66,20 @@ public class RegisterPage {
     public HomePage closeRegisterPage() throws InterruptedException {
         Thread.sleep(1000);
         backBtn.click();
+        logger.info("[RegisterPage] Back Button is clicked");
         return new HomePage(mobileDriver);
     }
 
     public void clickGoogleIcon() throws InterruptedException {
         Thread.sleep(1000);
         googleIcon.click();
-        System.out.println("[RegisterPage] googleIcon is clicked");
+        logger.info("[RegisterPage] googleIcon is clicked");
     }
 
     public void clickFacebookIcon() throws InterruptedException {
         Thread.sleep(1000);
         faceBookIcon.click();
-        System.out.println("[RegisterPage] faceBookIcon is clicked");
+        logger.info("[RegisterPage] faceBookIcon is clicked");
     }
 
     public void verifyRegisterPageText(SoftAssert softAssert,
@@ -99,6 +102,7 @@ public class RegisterPage {
         Thread.sleep(1000);
         softAssert.assertEquals(policyMessage.getText(), policyMessageExpected);
         policyAgreeBtn.click();
+        logger.info("[RegisterPage] Agree Button is clicked");
     }
 
     public AccountPage selectAccount(SoftAssert softAssert, String accountNameExpected, String accountEmailExpected) throws InterruptedException {
@@ -106,6 +110,7 @@ public class RegisterPage {
         softAssert.assertEquals(accountName.getText(), accountNameExpected);
         softAssert.assertEquals(accountEmail.getText(), accountEmailExpected);
         accountName.click();
+        logger.info("[RegisterPage] Account " + accountName.getText() + "is selected");
         return new AccountPage(mobileDriver);
     }
 }

@@ -9,6 +9,8 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
+import static testClasses.BaseTest.logger;
+
 public class SearchPage {
     public AndroidDriver mobileDriver;
 
@@ -40,7 +42,7 @@ public class SearchPage {
 
     public HomePage clickBackBtn() throws InterruptedException {
         backBtn.click();
-        System.out.println("[SearchPage] Back Button is clicked");
+        logger.info("[SearchPage] Back Button is clicked");
         Thread.sleep(2000);
         return new HomePage(mobileDriver);
     }
@@ -48,12 +50,12 @@ public class SearchPage {
     public void enterSearchBtn(String input) throws InterruptedException {
         Thread.sleep(1000);
         searchInputBox.sendKeys(input);
-        System.out.println("[SearchPage] " + input + " is entered");
+        logger.info("[SearchPage] " + input + " is entered");
     }
 
     public SearchResultPage clickSearchBtn() throws InterruptedException {
         searchBtn.click();
-        System.out.println("[SearchPage] Search Button is clicked");
+        logger.info("[SearchPage] Search Button is clicked");
         Thread.sleep(2000);
         return new SearchResultPage(mobileDriver);
     }

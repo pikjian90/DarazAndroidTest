@@ -10,6 +10,8 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
+import static testClasses.BaseTest.logger;
+
 public class HomePage {
     public AndroidDriver mobileDriver;
 
@@ -74,7 +76,7 @@ public class HomePage {
     public void clickNoToSetLocation() throws InterruptedException {
         clickPopUpCloseBtn();
         setLocationNoBtn.click();
-        System.out.println("No button is click to not set location");
+        logger.info("[HomePage] No button is click to not set location");
         clickPopUpCloseBtn();
     }
 
@@ -82,9 +84,9 @@ public class HomePage {
         Thread.sleep(3000);
         try {
             popUpCloseBtn.click();
-            System.out.println("Close Pop Up button is clicked");
+            logger.info("[HomePage] Close Pop Up button is clicked");
         } catch (NoSuchElementException e) {
-            System.out.println("Close Pop Up button is not existed");
+            logger.info("[HomePage] Close Pop Up button is not existed");
         }
     }
 
@@ -92,9 +94,9 @@ public class HomePage {
         Thread.sleep(3000);
         try {
             emptyBackGround.click();
-            System.out.println("emptyBackGround is clicked to skip delivery location");
+            logger.info("[HomePage] emptyBackGround is clicked to skip delivery location");
         } catch (NoSuchElementException e) {
-            System.out.println("emptyBackGround is not existed");
+            logger.info("[HomePage] emptyBackGround is not existed");
         }
     }
 
@@ -122,7 +124,7 @@ public class HomePage {
         for (int i = 0; i < bottomIcons.size(); i++) {
             if (bottomIcons.get(i).getText().equals("Account")) {
                 bottomIcons.get(i).click();
-                System.out.println("[navigateToAccountPage] " + bottomIcons.get(i).getText() + " is clicked");
+                logger.info("[Homepage] " + bottomIcons.get(i).getText() + " is clicked");
             }
         }
         return new AccountPage(mobileDriver);
@@ -130,7 +132,7 @@ public class HomePage {
 
     public SearchPage clickSearchInputBox() {
         searchInputBox.click();
-        System.out.println("[HomePage] Search Button is clicked");
+        logger.info("[HomePage] Search Button is clicked");
         return new SearchPage(mobileDriver);
     }
 

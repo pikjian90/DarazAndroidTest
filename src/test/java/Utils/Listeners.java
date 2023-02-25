@@ -1,11 +1,8 @@
 package Utils;
 
-import io.appium.java_client.android.AndroidDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import testClasses.BaseTest;
-
-import java.io.IOException;
 
 public class Listeners extends BaseTest implements ITestListener {
 

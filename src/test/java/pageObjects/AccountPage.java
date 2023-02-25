@@ -9,6 +9,8 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
+import static testClasses.BaseTest.logger;
+
 public class AccountPage {
     public AndroidDriver mobileDriver;
 
@@ -97,7 +99,7 @@ public class AccountPage {
     public RegisterPage clickLoginOrSignUpBtn() throws InterruptedException {
         Thread.sleep(1000);
         loginOrSignUpBtn.click();
-        System.out.println("[AccountPage] " + "loginOrSignUpBtn is clicked");
+        logger.info("[AccountPage] " + "loginOrSignUpBtn is clicked");
         return new RegisterPage(mobileDriver);
     }
 
@@ -106,21 +108,21 @@ public class AccountPage {
                                       String usernameTextExpected, String loginOrSignUpBtnTextExpected,
                                       String myOrderTitleTextExpected, String serviceTitleTextExpected,
                                       String returnOrCancellationsExpected1,  String returnOrCancellationsExpected2) {
-        softAssert.assertEquals(usernameText.getText(), "Hello, Welcome to Daraz !");
-        softAssert.assertEquals(loginOrSignUpBtn.getText(), "Login / Sign up");
-        softAssert.assertEquals(myOrderTitleText.getText(), "My Orders");
-        softAssert.assertEquals(serviceTitleText.getText(), "My Services");
+        softAssert.assertEquals(usernameText.getText(), usernameTextExpected);
+        softAssert.assertEquals(loginOrSignUpBtn.getText(), loginOrSignUpBtnTextExpected);
+        softAssert.assertEquals(myOrderTitleText.getText(), myOrderTitleTextExpected);
+        softAssert.assertEquals(serviceTitleText.getText(), serviceTitleTextExpected);
 
         for (int i = 0; i < returnOrCancellations.size(); i++) {
             switch (i) {
                 case 0:
-                    softAssert.assertEquals(returnOrCancellations.get(0).getText(), "My Returns");
+                    softAssert.assertEquals(returnOrCancellations.get(0).getText(), returnOrCancellationsExpected1);
                     break;
                 case 1:
-                    softAssert.assertEquals(returnOrCancellations.get(1).getText(), "My Cancellations");
+                    softAssert.assertEquals(returnOrCancellations.get(1).getText(), returnOrCancellationsExpected2);
                     break;
                 default:
-                    System.out.println();
+                    logger.info(returnOrCancellations.get(i).getText());
             }
         }
 
@@ -154,7 +156,7 @@ public class AccountPage {
                     softAssert.assertEquals(txtDownText.get(i).getText(), "My Reviews");
                     break;
                 default:
-                    System.out.println(txtDownText.get(i).getText());
+                    logger.info(txtDownText.get(i).getText());
             }
         }
 

@@ -1,0 +1,57 @@
+INFO	2023-02-26 03:01:47,820	0	BybitWebSocketTest	[main]	Before Method
+INFO	2023-02-26 03:10:53,213	988	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:16:56,019	989	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:20:23,154	972	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:21:49,365	0	org.testng.internal.Utils	[main]	[TestNG] Running:
+  /Users/pikjian/Library/Caches/JetBrains/IdeaIC2021.3/temp-testng-customsuite.xml
+
+INFO	2023-02-26 03:21:49,718	353	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:22:33,567	0	org.testng.internal.Utils	[main]	[TestNG] Running:
+  /Users/pikjian/Library/Caches/JetBrains/IdeaIC2021.3/temp-testng-customsuite.xml
+
+INFO	2023-02-26 03:22:33,809	242	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:23:24,288	0	org.testng.internal.Utils	[main]	[TestNG] Running:
+  /Users/pikjian/Library/Caches/JetBrains/IdeaIC2021.3/temp-testng-customsuite.xml
+
+INFO	2023-02-26 03:23:24,587	299	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:23:47,450	23162	DarazAndroid	[main]	After Method
+INFO	2023-02-26 03:23:47,524	23236	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:24:28,125	63837	DarazAndroid	[main]	After Method
+INFO	2023-02-26 03:25:47,058	0	org.testng.internal.Utils	[main]	[TestNG] Running:
+  /Users/pikjian/Library/Caches/JetBrains/IdeaIC2021.3/temp-testng-customsuite.xml
+
+INFO	2023-02-26 03:25:47,296	238	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:26:31,543	44485	DarazAndroid	[main]	After Method
+INFO	2023-02-26 03:26:31,553	44495	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:27:11,979	84921	DarazAndroid	[main]	After Method
+INFO	2023-02-26 03:40:29,379	0	org.testng.internal.Utils	[main]	[TestNG] Running:
+  /Users/pikjian/Library/Caches/JetBrains/IdeaIC2021.3/temp-testng-customsuite.xml
+
+INFO	2023-02-26 03:40:29,549	170	DarazAndroid	[main]	Before Suite
+INFO	2023-02-26 03:40:29,614	235	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:40:41,354	11975	DarazAndroid	[main]	[SelectYourCountryPage] Bangladesh is selected
+INFO	2023-02-26 03:40:42,303	12924	DarazAndroid	[main]	[SelectYourCountryPage] ENGLISH is clicked
+INFO	2023-02-26 03:40:43,093	13714	DarazAndroid	[main]	[IntroPage] Skip Intro Button is clicked
+INFO	2023-02-26 03:40:48,241	18862	DarazAndroid	[main]	[HomePage] Close Pop Up button is not existed
+INFO	2023-02-26 03:40:48,377	18998	DarazAndroid	[main]	[HomePage] No button is click to not set location
+INFO	2023-02-26 03:40:52,330	22951	DarazAndroid	[main]	[HomePage] Close Pop Up button is clicked
+INFO	2023-02-26 03:40:56,161	26782	DarazAndroid	[main]	[HomePage] Close Pop Up button is clicked
+INFO	2023-02-26 03:40:58,744	29365	DarazAndroid	[main]	[Homepage] Cart is clicked
+INFO	2023-02-26 03:41:00,592	31213	DarazAndroid	[main]	[Homepage] Account is clicked
+INFO	2023-02-26 03:41:03,118	33739	DarazAndroid	[main]	[RegisterPage] faceBookIcon is clicked
+INFO	2023-02-26 03:41:04,356	34977	DarazAndroid	[main]	[RegisterPage] Agree Button is clicked
+INFO	2023-02-26 03:41:10,809	41430	DarazAndroid	[main]	After Method
+INFO	2023-02-26 03:41:10,814	41435	DarazAndroid	[main]	Before Method
+INFO	2023-02-26 03:41:20,818	51439	DarazAndroid	[main]	[SelectYourCountryPage] Bangladesh is selected
+INFO	2023-02-26 03:41:21,705	52326	DarazAndroid	[main]	[SelectYourCountryPage] ENGLISH is clicked
+INFO	2023-02-26 03:41:22,504	53125	DarazAndroid	[main]	[IntroPage] Skip Intro Button is clicked
+INFO	2023-02-26 03:41:27,677	58298	DarazAndroid	[main]	[HomePage] Close Pop Up button is not existed
+INFO	2023-02-26 03:41:27,790	58411	DarazAndroid	[main]	[HomePage] No button is click to not set location
+INFO	2023-02-26 03:41:32,341	62962	DarazAndroid	[main]	[HomePage] Close Pop Up button is clicked
+INFO	2023-02-26 03:41:36,185	66806	DarazAndroid	[main]	[HomePage] Close Pop Up button is clicked
+INFO	2023-02-26 03:41:38,747	69368	DarazAndroid	[main]	[Homepage] Cart is clicked
+INFO	2023-02-26 03:41:40,077	70698	DarazAndroid	[main]	[Homepage] Account is clicked
+INFO	2023-02-26 03:41:42,499	73120	DarazAndroid	[main]	[RegisterPage] googleIcon is clicked
+INFO	2023-02-26 03:41:43,824	74445	DarazAndroid	[main]	[RegisterPage] Agree Button is clicked
+INFO	2023-02-26 03:41:47,826	78447	DarazAndroid	[main]	After Method
+INFO	2023-02-26 03:41:48,243	78864	DarazAndroid	[main]	After Suite

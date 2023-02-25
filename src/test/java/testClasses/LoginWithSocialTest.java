@@ -23,7 +23,7 @@ public class LoginWithSocialTest extends BaseTest {
 
     @BeforeMethod
     public void initialize() {
-        System.out.println("Before Method");
+        logger.info("Before Method");
         mobileDriver = initializeDriver();
     }
 
@@ -118,7 +118,7 @@ public class LoginWithSocialTest extends BaseTest {
 
     @AfterMethod
     public void tearDown(ITestResult testResult) {
-        System.out.println("After Method");
+        logger.info("After Method");
 //        this.mobileDriver.quit();
     }
 }

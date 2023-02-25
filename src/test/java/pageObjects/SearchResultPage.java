@@ -10,6 +10,8 @@ import org.testng.asserts.SoftAssert;
 import java.util.ArrayList;
 import java.util.List;
 
+import static testClasses.BaseTest.logger;
+
 public class SearchResultPage {
     public AndroidDriver mobileDriver;
 
@@ -63,7 +65,7 @@ public class SearchResultPage {
 
     public HomePage clickBackBtn() throws InterruptedException {
         backBtn.click();
-        System.out.println("[SearchPage] Back Button is clicked");
+        logger.info("[SearchPage] Back Button is clicked");
         Thread.sleep(2000);
         return new HomePage(mobileDriver);
     }
@@ -71,7 +73,7 @@ public class SearchResultPage {
     public void enterSearchInputBox(String input) throws InterruptedException {
         Thread.sleep(1000);
         searchInputBox.sendKeys(input);
-        System.out.println("[SearchPage] " + input + " is entered");
+        logger.info("[SearchPage] " + input + " is entered");
     }
 
     public void verifyTabTextList(SoftAssert softAssert){
@@ -81,7 +83,7 @@ public class SearchResultPage {
                 case 1: softAssert.assertEquals(tabTextList.get(i).getText(), "Mall");break;
                 case 2: softAssert.assertEquals(tabTextList.get(i).getText(), "Free Shipping");break;
                 default:
-                    System.out.println("[SearchResultPage] " + tabTextList.get(i).getText());
+                    logger.info("[SearchResultPage] " + tabTextList.get(i).getText());
             }
         }
     }
@@ -94,7 +96,7 @@ public class SearchResultPage {
                 case 2: softAssert.assertEquals(configTextList.get(i).getText(), "Price");break;
                 case 3: softAssert.assertEquals(configTextList.get(i).getText(), "New");break;
                 default:
-                    System.out.println("[SearchResultPage] " + configTextList.get(i).getText());
+                    logger.info("[SearchResultPage] " + configTextList.get(i).getText());
             }
 
         }
@@ -108,14 +110,14 @@ public class SearchResultPage {
                 case 2: softAssert.assertEquals(filterItemTextList.get(i).getText(), "Fulfilled By Daraz");break;
                 case 3: softAssert.assertEquals(filterItemTextList.get(i).getText(), "Service");break;
                 default:
-                    System.out.println("[SearchResultPage] " + filterItemTextList.get(i).getText());
+                    logger.info("[SearchResultPage] " + filterItemTextList.get(i).getText());
             }
 
         }
     }
 
     public void verifyPriceSortedBySales(SoftAssert softAssert) throws InterruptedException {
-        System.out.println("[SearchResultPage] " + configTextList.get(1).getText() + "is clicked");
+        logger.info("[SearchResultPage] " + configTextList.get(1).getText() + "is clicked");
         configTextList.get(1).click();
         Thread.sleep(1000);
         ArrayList<Integer> soldCountResultList = new ArrayList<>();
@@ -126,7 +128,7 @@ public class SearchResultPage {
             }
             soldCountResultList.add(Integer.parseInt(item));
         }
-        System.out.println("[SearchResultPage] soldCountResultList : " + soldCountResultList);
+        logger.info("[SearchResultPage] soldCountResultList : " + soldCountResultList);
 
         boolean isSortedBySoldCount = true;
         for (int i = 1; i < soldCountResultList.size(); i++) {
@@ -138,7 +140,7 @@ public class SearchResultPage {
     }
 
     public void verifyPriceSortedByPrices(SoftAssert softAssert) throws InterruptedException {
-        System.out.println("[SearchResultPage] " + configTextList.get(2).getText() + " is clicked");
+        logger.info("[SearchResultPage] " + configTextList.get(2).getText() + " is clicked");
         configTextList.get(2).click();
         Thread.sleep(1000);
         ArrayList<Integer> productsPriceResultList = new ArrayList<>();
@@ -147,7 +149,7 @@ public class SearchResultPage {
             if (i == 0 || i ==1 ) {
                 String item = productsPriceList.get(i).getText().split(" ")[1].replace(",", "");
                 productsPriceResultList.add(Integer.parseInt(item));
-                System.out.println("[SearchResultPage] productsPriceResultList : " + productsPriceResultList);
+                logger.info("[SearchResultPage] productsPriceResultList : " + productsPriceResultList);
             }
             else {
                 if (i % 2 == 0) {
@@ -156,7 +158,7 @@ public class SearchResultPage {
                     String item = productsPriceList.get(i).getText().split(" ")[1].replace(",", "");
                     productsPriceResultList.add(Integer.parseInt(item));
                     productsPriceResultList.add(Integer.parseInt(temp));
-                    System.out.println("[SearchResultPage] productsPriceResultList : " + productsPriceResultList);
+                    logger.info("[SearchResultPage] productsPriceResultList : " + productsPriceResultList);
                 }
             }
         }

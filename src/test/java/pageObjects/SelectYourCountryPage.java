@@ -42,11 +42,10 @@ public class SelectYourCountryPage extends BaseTest {
 
     public void selectCountryName(String country) {
         for (int i = 0; i < countryName.size(); i++) {
-            System.out.println("[selectCountryName] :" + countryName.get(i).getText() + ":" + country);
             if (countryName.get(i).getText().equals(country)) {
                 String selectCountryName = countryName.get(i).getText();
                 countryName.get(i).click();
-                System.out.println(selectCountryName + " is clicked");
+                logger.info("[SelectYourCountryPage] " + selectCountryName + " is selected");
             }
         }
     }
@@ -54,11 +53,10 @@ public class SelectYourCountryPage extends BaseTest {
     public IntroPage selectLanguage(String language) {
         for (int i = 0; i < alertButtons.size(); i++) {
             WebElement languageButton = alertButtons.get(i);
-            System.out.println("[selectLanguage] :" + languageButton.getText() + ":" + language);
             if (languageButton.getText().equals(language)) {
                 String selectLanguage = languageButton.getText();
                 languageButton.click();
-                System.out.println(selectLanguage + " is clicked");
+                logger.info("[SelectYourCountryPage] " + selectLanguage + " is clicked");
             }
         }
         return new IntroPage(mobileDriver);

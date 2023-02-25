@@ -5,7 +5,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.appium.java_client.android.AndroidDriver;
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -14,16 +13,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.asserts.SoftAssert;
-import pageObjects.SelectYourCountryPage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class BaseTest {
@@ -52,11 +46,11 @@ public class BaseTest {
         extentReports.setSystemInfo("Environment","QA");
         extentReports.setSystemInfo("Tester","QA");
 
-        logger = Logger.getLogger("BybitWebSocketTest"); // added logger
-        PropertyConfigurator.configure("log4j.properties");
+        logger = Logger.getLogger("DarazAndroid"); // added logger
+        PropertyConfigurator.configure("src/test/resources/log4j.properties");
         logger.setLevel(Level.INFO);
 
-        System.out.println("Before Suite");
+        logger.info("Before Suite");
     }
 
     public AndroidDriver initializeDriver() {
@@ -81,7 +75,7 @@ public class BaseTest {
         return cap;
     }
 
-    public String takeScreenshot() throws IOException{
+    public String takeScreenshot() {
         String base64ScreenshotCode = ((TakesScreenshot)mobileDriver).getScreenshotAs(OutputType.BASE64);
         return base64ScreenshotCode;
     }
@@ -89,7 +83,7 @@ public class BaseTest {
     @AfterSuite
     public void tearDownSuite(){
         extentReports.flush();
-        System.out.println("After Suite");
+        logger.info("After Suite");
 
     }
 }
