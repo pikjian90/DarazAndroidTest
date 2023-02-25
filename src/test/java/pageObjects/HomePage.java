@@ -83,8 +83,7 @@ public class HomePage {
         try {
             popUpCloseBtn.click();
             System.out.println("Close Pop Up button is clicked");
-        }
-        catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             System.out.println("Close Pop Up button is not existed");
         }
     }
@@ -94,8 +93,7 @@ public class HomePage {
         try {
             emptyBackGround.click();
             System.out.println("emptyBackGround is clicked to skip delivery location");
-        }
-        catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             System.out.println("emptyBackGround is not existed");
         }
     }
@@ -103,7 +101,7 @@ public class HomePage {
     public RegisterPage navigateToMessagePageWithoutLogin() throws InterruptedException {
         Thread.sleep(1000);
         for (int i = 0; i < bottomIcons.size(); i++) {
-            if(bottomIcons.get(i).getText().equals("Messages")){
+            if (bottomIcons.get(i).getText().equals("Messages")) {
                 bottomIcons.get(i).click();
             }
         }
@@ -113,16 +111,16 @@ public class HomePage {
     public RegisterPage navigateToCartPageWithoutLogin() throws InterruptedException {
         Thread.sleep(1000);
         for (int i = 0; i < bottomIcons.size(); i++) {
-            if(bottomIcons.get(i).getText().equals("Cart")){
+            if (bottomIcons.get(i).getText().equals("Cart")) {
                 bottomIcons.get(i).click();
             }
         }
         return new RegisterPage(mobileDriver);
     }
 
-    public AccountPage navigateToAccountPage(){
+    public AccountPage navigateToAccountPage() {
         for (int i = 0; i < bottomIcons.size(); i++) {
-            if(bottomIcons.get(i).getText().equals("Account")){
+            if (bottomIcons.get(i).getText().equals("Account")) {
                 bottomIcons.get(i).click();
                 System.out.println("[navigateToAccountPage] " + bottomIcons.get(i).getText() + " is clicked");
             }
@@ -130,7 +128,7 @@ public class HomePage {
         return new AccountPage(mobileDriver);
     }
 
-    public SearchPage clickSearchInputBox(){
+    public SearchPage clickSearchInputBox() {
         searchInputBox.click();
         System.out.println("[HomePage] Search Button is clicked");
         return new SearchPage(mobileDriver);
@@ -138,59 +136,75 @@ public class HomePage {
 
     public void verifyIconText(SoftAssert softAssert,
                                String scanTextExpected, String coinTextExpected,
-                               String messageTextExpected, String cartTextExpected, String accountTextExpected ){
+                               String messageTextExpected, String cartTextExpected, String accountTextExpected) {
         softAssert.assertEquals(scanText.getText(), scanTextExpected);
         softAssert.assertEquals(coinText.getText(), coinTextExpected);
 
         for (int i = 0; i < bottomIcons.size(); i++) {
-            switch (i){
-                case 0 : softAssert.assertEquals(bottomIcons.get(i).getText(), messageTextExpected);break;
-                case 1 : softAssert.assertEquals(bottomIcons.get(i).getText(), cartTextExpected);break;
-                case 2 : softAssert.assertEquals(bottomIcons.get(i).getText(), accountTextExpected);break;
+            switch (i) {
+                case 0:
+                    softAssert.assertEquals(bottomIcons.get(i).getText(), messageTextExpected);
+                    break;
+                case 1:
+                    softAssert.assertEquals(bottomIcons.get(i).getText(), cartTextExpected);
+                    break;
+                case 2:
+                    softAssert.assertEquals(bottomIcons.get(i).getText(), accountTextExpected);
+                    break;
             }
         }
     }
 
     public void verifyIconText(SoftAssert softAssert,
                                String scanTextExpected, String coinTextExpected, String walletTextExpected,
-                               String messageTextExpected, String cartTextExpected, String accountTextExpected ){
+                               String messageTextExpected, String cartTextExpected, String accountTextExpected) {
         softAssert.assertEquals(scanText.getText(), scanTextExpected);
         softAssert.assertEquals(coinText.getText(), coinTextExpected);
         softAssert.assertEquals(walletText.getText(), walletTextExpected);
 
         for (int i = 0; i < bottomIcons.size(); i++) {
-            switch (i){
-                case 0 : softAssert.assertEquals(bottomIcons.get(i).getText(), messageTextExpected);break;
-                case 1 : softAssert.assertEquals(bottomIcons.get(i).getText(), cartTextExpected);break;
-                case 2 : softAssert.assertEquals(bottomIcons.get(i).getText(), accountTextExpected);break;
+            switch (i) {
+                case 0:
+                    softAssert.assertEquals(bottomIcons.get(i).getText(), messageTextExpected);
+                    break;
+                case 1:
+                    softAssert.assertEquals(bottomIcons.get(i).getText(), cartTextExpected);
+                    break;
+                case 2:
+                    softAssert.assertEquals(bottomIcons.get(i).getText(), accountTextExpected);
+                    break;
             }
         }
     }
 
     public void verifyChannelsText(SoftAssert softAssert,
-                                   String channelText1, String channelText2,String channelText3,
-                                   String channelText4,String channelText5){
+                                   String channelText1, String channelText2, String channelText3,
+                                   String channelText4, String channelText5) {
         for (int i = 0; i < channelsText.size(); i++) {
-            switch (i){
-                case 0 : softAssert.assertEquals(channelsText.get(i).getText().trim(),
-                        channelText1);
-                        break;
-                case 1 : softAssert.assertEquals(channelsText.get(i).getText(),
-                        channelText2);
-                        break;
-                case 2 : softAssert.assertEquals(channelsText.get(i).getText(),
-                        channelText3);
-                        break;
-                case 3 : softAssert.assertEquals(channelsText.get(i).getText(),
-                        channelText4);
-                        break;
-                case 4 : softAssert.assertEquals(channelsText.get(i).getText(),
-                        channelText5);
-                        break;
+            switch (i) {
+                case 0:
+                    softAssert.assertEquals(channelsText.get(i).getText().trim(),
+                            channelText1);
+                    break;
+                case 1:
+                    softAssert.assertEquals(channelsText.get(i).getText(),
+                            channelText2);
+                    break;
+                case 2:
+                    softAssert.assertEquals(channelsText.get(i).getText(),
+                            channelText3);
+                    break;
+                case 3:
+                    softAssert.assertEquals(channelsText.get(i).getText(),
+                            channelText4);
+                    break;
+                case 4:
+                    softAssert.assertEquals(channelsText.get(i).getText(),
+                            channelText5);
+                    break;
             }
         }
     }
-
 
 
 }
